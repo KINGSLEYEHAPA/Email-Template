@@ -1,0 +1,364 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  margin: 0 75px;
+  background-color: #e7b7b9;
+}
+
+#grid-container {
+  display: grid;
+  display: flex;
+  flex-direction: column;
+  background-color: #f70816;
+  margin-bottom: 2rem;
+  height: 1024px;
+  width: 100%;
+  margin: 10px;
+  font-size: 1.2rem;
+  grid-template-columns: 100%;
+  grid-template-rows: 8fr 10fr 1fr 1fr 1fr 1fr 8fr 12fr 8fr;
+  grid-template-areas:
+    "header"
+    "hero"
+    "movie1"
+    "movie2"
+    "movie3"
+    "movie4"
+    "features"
+    "locations"
+    "footer";
+}
+/* media query starts */
+
+@media only screen and (min-width: 768px) {
+  #grid-container {
+    display: grid;
+    display: flex;
+    font-size: 1.5rem;
+    background-color: #f70816;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr 1fr 5fr 5fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "header header"
+      "hero hero"
+      "movie1 movie2"
+      "movie3 movie4"
+      "features features"
+      "locations locations"
+      "footer footer";
+  }
+
+  #header {
+    display: flex;
+    grid-area: header;
+    background-color: #f70816;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #mbox-1 {
+    grid-area: movie1;
+  }
+
+  #mbox-1 img,
+  #mbox-2 img,
+  #mbox-3 img,
+  #mbox-4 img {
+    height: 75%;
+    margin: 1.6rem;
+  }
+  #mbox-1 div,
+  #mbox-2 div,
+  #mbox-3 div,
+  #mbox-4 div {
+    height: 50%;
+  }
+  #mbox-2 {
+    grid-area: movie2;
+  }
+  #mbox-3 {
+    grid-area: movie3;
+  }
+  #mbox-4 {
+    grid-area: movie4;
+  }
+  #new-movies {
+    display: flex;
+    grid-area: movies;
+    text-align: center;
+    background-color: #f70816;
+  }
+
+  #header ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    position: relative;
+  }
+
+  #header ul li {
+    padding: 0.8rem 1.2vw;
+  }
+  #header ul li a {
+    font-size: 1.2rem;
+    border: none;
+    font-weight: 900;
+  }
+}
+
+/* media query ends */
+
+/* header section */
+#header {
+  grid-area: header;
+  background-color: #f70816;
+  border: solid 4px #f83a45;
+}
+#header ul {
+  list-style: none;
+  line-height: 2.5rem;
+}
+#header ul li a {
+  text-decoration: none;
+  color: white;
+  padding-bottom: 0.2rem;
+}
+#header ul li a,
+#header p {
+  margin: 0.2rem 0.8rem;
+}
+#header p {
+  font-size: 3vw;
+  color: #f83a45;
+  padding: 5px;
+  margin-bottom: 0.3rem;
+  font-weight: 900;
+  background-color: green;
+}
+
+#hero {
+  grid-area: hero;
+  background-color: #f70816;
+}
+#hero img {
+  position: relative;
+}
+
+#hero div {
+  width: 50vw;
+  height: 32vw;
+  background-color: rgba(247, 8, 22, 0.25);
+  position: absolute;
+  z-index: 25;
+  margin-left: 1.2rem;
+  color: white;
+  top: 14.8rem;
+  right: 25vw;
+  padding: 1.2rem;
+}
+#hero div h1 {
+  margin-bottom: 10px;
+}
+#hero div h1,
+#hero div h3,
+#hero div p {
+  font-size: 2vw;
+}
+
+#hero div p {
+  margin-top: 10px;
+}
+#hero div h3 p {
+  display: inline-block;
+
+  color: #f83a45;
+  background-color: green;
+  margin-bottom: 0.3rem;
+  font-weight: 900;
+  padding: 5px;
+}
+
+#hero div > * {
+  text-align: justify;
+  width: 100%;
+}
+#hero img {
+  width: 100%;
+}
+
+#mbox-1 {
+  grid-area: movie1;
+  background-color: #f70816;
+  width: 100%;
+  padding: 10px;
+}
+#mbox-1 div h5,
+#mbox-2 div h5,
+#mbox-3 div h5,
+#mbox-4 div h5 {
+  color: white;
+}
+
+#mbox-1 div p,
+#mbox-2 div p,
+#mbox-3 div p,
+#mbox-4 div p {
+  color: white;
+  background-color: rgba(231, 241, 231, 0.1);
+  text-align: left;
+  margin-top: 1rem;
+  padding: 0.8rem;
+  font-size: 1.2rem;
+  border-radius: 5px;
+}
+
+#mbox-1 div button,
+#mbox-2 div button,
+#mbox-3 div button,
+#mbox-4 div button {
+  color: #f83a45;
+  background-color: white;
+  border: none;
+  outline: none;
+  padding: 0.6rem;
+  margin: 0.8rem 0;
+  border-radius: 0.3rem;
+  font-weight: 900;
+  text-align: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+#mbox-2 {
+  grid-area: movie2;
+  background-color: #f70816;
+  width: 100%;
+  padding: 10px;
+}
+#mbox-3 {
+  grid-area: movie3;
+  background-color: #f70816;
+  width: 100%;
+  padding: 10px;
+}
+#mbox-4 {
+  grid-area: movie4;
+  background-color: #f70816;
+  width: 100%;
+  padding: 10px;
+}
+#mbox-1 img,
+#mbox-2 img,
+#mbox-3 img,
+#mbox-4 img {
+  height: 30rem;
+  width: 100%;
+  margin: 2%;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  left: -7px;
+}
+
+#features {
+  grid-area: features;
+  background-color: #f83a45;
+  text-align: center;
+}
+
+#features p,
+#locations p {
+  text-align: center;
+  color: white;
+  font-weight: 900;
+  font-size: 1.5rem;
+  margin: 0.8rem 0;
+}
+#features ul,
+#locations ul {
+  list-style: none;
+}
+#features ul,
+#features p {
+  padding: 0 0.8rem;
+}
+#features ul li,
+#locations ul li {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  color: white;
+  text-align: justify;
+}
+#features ul li:before,
+#locations ul li:before {
+  content: "\f005";
+  font-family: "Font Awesome 5 Free";
+  padding-right: 0.4rem;
+  width: 0.05rem;
+}
+
+#locations {
+  grid-area: locations;
+  background-color: #f70816;
+  margin-top: 0;
+  text-align: center;
+}
+#locations ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+#locations ul li {
+  padding: 0 2rem;
+}
+#footer {
+  grid-area: footer;
+  background-color: #f83a45;
+  text-align: center;
+  padding: 0.5rem;
+}
+#footer h4 {
+  text-align: center;
+  color: white;
+  font-weight: 900;
+  font-size: 1.5rem;
+  margin: 0.8rem 0;
+}
+#footer p {
+  font-size: 1rem;
+  color: white;
+  line-height: 2rem;
+}
+.socials {
+  margin: 1.2rem;
+}
+
+.socials a {
+  text-decoration: none;
+  padding: 0.6rem;
+  margin-top: 0.8rem;
+  font-size: 2rem;
+  color: white;
+}
+
+#footer hr {
+  margin: 0.5rem;
+}
+#footer span a {
+  color: white;
+  font-size: 0.8rem;
+}
+.copyright {
+  font-size: 0.8rem;
+}
+
+.copyright span {
+  color: #f83a45;
+  font-weight: 900;
+  background-color: white;
+}
